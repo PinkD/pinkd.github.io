@@ -1,7 +1,7 @@
 ##引言
 我们为什么需要规范命名？首先，容我举个栗子：
 >有这样一个求最大值的函数：
-```c
+```
 //C
 int max(int a, int b);
 int zuidazhi(int a, int b);
@@ -9,7 +9,7 @@ int zuidazhi(int a, int b);
 读第一行代码的过程：单词max->最大值
 读第二行代码的过程：拼音zuidazhi->从拼音匹配对应汉字->最大值
 可能你现在还觉得第二种命名也不是那么难理解。那么再看看下面的：
-```c
+```
 //C
 int checkUsername(char *username);
 int jianchayonghuming(char *yonghuming);
@@ -27,7 +27,7 @@ int jianchayonghuming(char *yonghuming);
 - 常量大写+下划线命名法。
 
 例子：
-```java 
+```
 //Java
 public class class {//这行直接炸
     public static final int EXIT_SUCCESS = 0;//下面应该会有一个exit(EXIT_SUCCESS);吧，手动滑稽
@@ -42,7 +42,7 @@ public class class {//这行直接炸
 
 例子：
 文件名为TestClass.java
-```java 
+```
 //Java
 public class TestClass {//类名必须和文件名相同，帕斯卡命名法
     private int sum;
@@ -66,8 +66,8 @@ public class TestClass {//类名必须和文件名相同，帕斯卡命名法
 - 下划线命名法。（脚本语言使用较多）
 - 特殊前后缀标记（php的$，python的__）
 
-```python
-#python
+```
+ #python
 class Test:
     def __init__(self):
         self.name = None
