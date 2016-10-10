@@ -6,26 +6,19 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
 assets: /assets
-baseurl: 
+baseurl: http://blog.pinkd.online
 
 # pagination
 paginate: 20
 
 # Markdown Processors
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - tables
-    - lax_spacing
-    - with_toc_data
+markdown: kramdown
+kramdown:
+    input: GFM
     
 
-title : Jekyll Jacman
-tagline: A fresh looking and responsive theme for Jekyll
+title : PinkD の Blog
+tagline: Steins;Gate
 
 defaults:
   -
@@ -52,7 +45,6 @@ widgets:
 - category
 - tag
 - links
-- douban
 - rss
 ## provide seven widgets:category,tag,rss,archive,tagcloud,links,weibo,douban
 
@@ -80,16 +72,16 @@ mathjax: false      #enable mathjax if true
 #### Author information
 author:
   name: yitao      ## e.g. wuchong Author name
-  intro_line1:  "Hello ,I'm Larry Page in Google."    ## your introduction on the bottom of the page
-  intro_line2:  "This is my blog,believe it or not."  ## the 2nd line
+  intro_line1:  "これわすべてはシュタインズゲートの选択だ！"    ## your introduction on the bottom of the page
+  intro_line2:  "EL PSY CONGROO!"  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   douban:     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
-  email:      ## e.g. imjark@gmail.com
+  email:      443657547@qq.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
-  github:     ## e.g. wuchong for https://github.com/wuchong
+  github:     https://github.com/78848d676612
   facebook:   ## e.g. imjark for https://facebook.com/imjark
   linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
   google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
@@ -105,8 +97,10 @@ toc:
 
 #### Links
 links:
-  码农圈: https://coderq.com
-  Jark's Blog: http://wuchong.me
+  #码农圈: https://coderq.com
+  #Jark's Blog: http://wuchong.me
+  简书: http://www.jianshu.com/users/28e6956f7fbb
+  红岩网校: http://hongyan.cqupt.edu.cn/
 
 
 
