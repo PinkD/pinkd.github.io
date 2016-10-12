@@ -195,7 +195,7 @@ git stash pop [stash@{*}]
 
 ```bash
 git tab <tag-name> [-m 'comment'] [commit-id]
-eg.
+ #eg.
 git tag v0.9 6224937
 ```
 
@@ -244,15 +244,13 @@ git check-ignore -v <filename>
 
 ```bash
 git config --global alias.<abbr> 'command'
-```
-e.g.
-```bash
+ #e.g.
 git config --global alias.fuck 'push origin'
 git config --global alias.logd "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 
 ## 不小心push了密码到github上
-没错，蠢哭了
+没错，简直蠢哭了
 
 [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
 用法：
