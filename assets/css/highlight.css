@@ -1,7 +1,7 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight .hll { background-color: #66ccff }
-.highlight .hl { background-color: #66ccff }
+.highlight .hll { background-color: #ffffff }
+.highlight .hl { background-color: #ffffff }
 .highlight pre code { color: #fff } /* Default */
 .highlight .c { color: #66ccff } /* Comment */
 .highlight .err { color: #ff0000; background-color: #ffffff } /* Error */
