@@ -41,8 +41,7 @@ int jianchayonghuming(char *yonghuming);
 
 ```java
 //Java
-//public class class {//这行直接炸
-public class TestClass {//这样就不会
+public class class {//这行直接炸
       public static final int EXIT_SUCCESS = 0;//下面应该会有一个exit(EXIT_SUCCESS);吧，手动滑稽
       private int zonghe;//可以，这很拼音
 }
@@ -55,6 +54,7 @@ public class TestClass {//这样就不会
 
 例子：
 文件名为TestClass.java
+
 ```java
 //Java
 public class TestClass {//类名必须和文件名相同，帕斯卡命名法
