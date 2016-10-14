@@ -1,4 +1,4 @@
----
+1---
 layout: post
 title: openkeeper配置
 description: 一番魔改
@@ -14,7 +14,6 @@ categories: Linux
 
 ```bash
 git clone https://github.com/purpleroc/OpenKeeper.git
-
 ```
 
 或者直接去下吧。。。
