@@ -16,7 +16,7 @@ categories: Java
 异常分为Error和Exception，我们通常说的处理异常，其实是处理Exception。而Error已经不是异常了，而是错误。一般是因为代码错误导致jvm崩溃。
 
 用图说话
-![异常大类](../images/Throwable.png)
+![异常大类](/images/Throwable.png)
 
 ### Exception
 
@@ -120,18 +120,18 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
 你可能会遇到无论是否出现异常都需要进行某种操作的情况，这时候，你就需要用到```finally```了。比如：
 
-    ```java
-    try {
-        throwException();
-        throw new NullPointerException();
-    } catch (MyException e) {
-        e.printStackTrace();
-    } catch (NullPointerException e) {
-        e.printStackTrace();
-    }finally {
-        System.out.println("An error occurred!");
-    }
-    ```
+```java
+try {
+    throwException();
+    throw new NullPointerException();
+} catch (MyException e) {
+    e.printStackTrace();
+} catch (NullPointerException e) {
+    e.printStackTrace();
+}finally {
+    System.out.println("An error occurred!");
+}
+```
 
 这种方法经常用来在异常发生后关闭流。</br>
 <del>其实可以把finally后面的语句看成擦屁股的</del>
@@ -159,7 +159,7 @@ public static void main(String[] args) {
 ```
 
 也就是在finally里面执行return。</br>
-IDEA里面会提示：![MissingException](../images/MissingException.png)</br>
+IDEA里面会提示：![MissingException](/images/MissingException.png)</br>
 其实原理就是在finally里面的语句会在异常处理完成之前执行。如果在finnally里面return，就会发生异常丢失。
 
 #### 异常实例
@@ -186,3 +186,4 @@ private int take(int index, int last) {//取豆子
 
 这是异常处理的用法之一，你永远不知道熊孩子们会搞出什么异常炸掉你的程序，所以熊孩子必须抓出来单独死。
 
+异常在Java中使用频率极高，多次使用对异常自然就熟悉了。
