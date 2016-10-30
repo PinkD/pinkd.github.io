@@ -24,14 +24,14 @@ categories: Java
 
 从上面的图可以看到，Exception这个类下面有很多子类，他们都继承自Exception，我们也可以自己写一个异常类。例如：
 
-```java
+``` java
 public class MyException extends Exception {
 }
 ```
 
 然后就可以使用了，例如：
 
-```java
+``` java
 public static void throwException() throws MyException {
     throw new MyException();
 }
@@ -41,7 +41,7 @@ public static void throwException() throws MyException {
 
 这个继承于Exceptiion的类啥都没写，所以类里面的东西和Exception里面的是一样的。让我们来看看Exception里面有些什么。好吧。。。全是super.method，我们还是看它的父类Throwable吧。
 
-```java
+``` java
 private transient Object backtrace;
 private String detailMessage;
 private Throwable cause = this;
@@ -51,7 +51,7 @@ private Throwable cause = this;
 
 异常的构造方法：
 
-```java
+``` java
 public Exception();
 public Exception(String message);
 public Exception(String message, Throwable cause);
@@ -75,7 +75,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
     使用`try catch`语句。用法：
 
-    ```java
+    ``` java
     public static void main(String[] args) {
         try {
             throwException();
@@ -91,7 +91,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     当然你也可以再次将异常抛出，交给上层继续处理。<br>
     有人会发现，`e.printStackTrace()`输出的怎么是红的，因为你看看它的源码：
 
-    ```java
+    ``` java
     public void printStackTrace() {
         printStackTrace(System.err);
     }
@@ -103,7 +103,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
     用于将不同类型的异常分开处理。
 
-    ```java
+    ``` java
     try {
         throwException();
         throw new NullPointerException();
@@ -120,7 +120,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
 你可能会遇到无论是否出现异常都需要进行某种操作的情况，这时候，你就需要用到`finally`了。比如：
 
-```java
+``` java
 try {
     throwException();
     throw new NullPointerException();
@@ -142,7 +142,7 @@ try {
 
 最简单的触发方法：
 
-```java
+``` java
 public static void main(String[] args) {
     try {
         throwException();
@@ -164,7 +164,7 @@ IDEA里面会提示：![MissingException](/images/MissingException.png)<br>
 
 #### 0x05 异常实例
 
-```java
+``` java
 private int take(int index, int last) {//取豆子
     int count;
     try {
