@@ -61,7 +61,7 @@ public Exception(Throwable cause);
 我就不具体写了。跟成员变量对应。
 
 
-jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相反)，直到他被处理(`catch`)，否则，程序停止工作，jvm向用户报告错误。异常的抛出（栈）路径可以通过`Exception.printStackTrace()```方法查看<br>
+jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相反)，直到他被处理(`catch`)，否则，程序停止工作，jvm向用户报告错误。异常的抛出（栈）路径可以通过`Exception.printStackTrace()```方法查看    
 而异常被处理后，程序会回到抛出异常的地方继续执行。
 
 
@@ -73,9 +73,9 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
 - 处理异常
 
-    使用`try catch`语句。用法：
+    使用`try catch`语句。用法：    
 
-    ``` java
+    ``` java    
     public static void main(String[] args) {
         try {
             throwException();
@@ -87,11 +87,11 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     }
     ```
 
-    `try`可能会抛出异常的语句块，`catch (MyException e)`捕获异常MyException声明为引用e.一般来说都会跟上一个`e.printStackTrace()`，打印错误详情，方便debug。<br>
-    当然你也可以再次将异常抛出，交给上层继续处理。<br>
-    有人会发现，`e.printStackTrace()`输出的怎么是红的，因为你看看它的源码：
+    `try`可能会抛出异常的语句块，`catch (MyException e)`捕获异常MyException声明为引用e.一般来说都会跟上一个`e.printStackTrace()`，打印错误详情，方便debug。    
+    当然你也可以再次将异常抛出，交给上层继续处理。    
+    有人会发现，`e.printStackTrace()`输出的怎么是红的，因为你看看它的源码：    
 
-    ``` java
+    ``` java    
     public void printStackTrace() {
         printStackTrace(System.err);
     }
@@ -101,9 +101,9 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
 - 多重异常处理
 
-    用于将不同类型的异常分开处理。
+    用于将不同类型的异常分开处理。    
 
-    ``` java
+    ``` java    
     try {
         throwException();
         throw new NullPointerException();
@@ -133,7 +133,7 @@ try {
 }
 ```
 
-这种方法经常用来在异常发生后关闭流。<br>
+这种方法经常用来在异常发生后关闭流。    
 <del>其实可以把finally后面的语句看成擦屁股的</del>
 
 #### 0x04 异常丢失
@@ -158,8 +158,8 @@ public static void main(String[] args) {
 }
 ```
 
-也就是在finally里面执行return。<br>
-IDEA里面会提示：![MissingException](/images/MissingException.png)<br>
+也就是在finally里面执行return。    
+IDEA里面会提示：![MissingException](/images/MissingException.png)    
 其实原理就是在finally里面的语句会在异常处理完成之前执行。如果在finnally里面return，就会发生异常丢失。
 
 #### 0x05 异常实例
