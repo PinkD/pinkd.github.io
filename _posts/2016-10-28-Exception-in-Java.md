@@ -61,7 +61,7 @@ public Exception(Throwable cause);
 我就不具体写了。跟成员变量对应。
 
 
-jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相反)，直到他被处理(```catch```)，否则，程序停止工作，jvm向用户报告错误。异常的抛出（栈）路径可以通过```Exception.printStackTrace()```方法查看</br>
+jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相反)，直到他被处理(`catch`)，否则，程序停止工作，jvm向用户报告错误。异常的抛出（栈）路径可以通过`Exception.printStackTrace()```方法查看<br>
 而异常被处理后，程序会回到抛出异常的地方继续执行。
 
 
@@ -69,11 +69,11 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
 - 抛出异常
 
-    很简单，直接使用```throw```关键字，但是如果抛出的异常未在当前方法处理，需要在方法后面声明。需要在它所在的方法处声明```throws MyException```。意思是此方法将抛出错误。
+    很简单，直接使用`throw`关键字，但是如果抛出的异常未在当前方法处理，需要在方法后面声明。需要在它所在的方法处声明`throws MyException`。意思是此方法将抛出错误。
 
 - 处理异常
 
-    使用```try catch```语句。用法：
+    使用`try catch`语句。用法：
 
     ```java
     public static void main(String[] args) {
@@ -87,9 +87,9 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     }
     ```
 
-    ```try```可能会抛出异常的语句块，```catch (MyException e)```捕获异常MyException声明为引用e.一般来说都会跟上一个e.printStackTrace()，打印错误详情，方便debug。</br>
+    `try`可能会抛出异常的语句块，`catch (MyException e)`捕获异常MyException声明为引用e.一般来说都会跟上一个`e.printStackTrace()`，打印错误详情，方便debug。<br>
     当然你也可以再次将异常抛出，交给上层继续处理。<br>
-    有人会发现，```e.printStackTrace()```输出的怎么是红的，因为你看看它的源码：
+    有人会发现，`e.printStackTrace()`输出的怎么是红的，因为你看看它的源码：
 
     ```java
     public void printStackTrace() {
@@ -97,7 +97,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     }
     ```
 
-    它默认用的输出流是```System.err```，而不是sout用的```System.out```哦。
+    它默认用的输出流是`System.err`，而不是sout用的`System.out`哦。
 
 - 多重异常处理
 
@@ -114,11 +114,11 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     }
     ```
 
-> 对了，如果程序因异常而退出，它的返回值就不为0，在IDEA中可以明显看到：```Process finished with exit code xxx```
+> 对了，如果程序因异常而退出，它的返回值就不为0，在IDEA中可以明显看到：`Process finished with exit code xxx`
 
 #### 0x03 finally关键字
 
-你可能会遇到无论是否出现异常都需要进行某种操作的情况，这时候，你就需要用到```finally```了。比如：
+你可能会遇到无论是否出现异常都需要进行某种操作的情况，这时候，你就需要用到`finally`了。比如：
 
 ```java
 try {
@@ -133,7 +133,7 @@ try {
 }
 ```
 
-这种方法经常用来在异常发生后关闭流。</br>
+这种方法经常用来在异常发生后关闭流。<br>
 <del>其实可以把finally后面的语句看成擦屁股的</del>
 
 #### 0x04 异常丢失
@@ -158,8 +158,8 @@ public static void main(String[] args) {
 }
 ```
 
-也就是在finally里面执行return。</br>
-IDEA里面会提示：![MissingException](/images/MissingException.png)</br>
+也就是在finally里面执行return。<br>
+IDEA里面会提示：![MissingException](/images/MissingException.png)<br>
 其实原理就是在finally里面的语句会在异常处理完成之前执行。如果在finnally里面return，就会发生异常丢失。
 
 #### 0x05 异常实例
