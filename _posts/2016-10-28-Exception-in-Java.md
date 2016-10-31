@@ -73,27 +73,27 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
     使用`try catch`语句。用法：    
 
-        ``` java    
-        public static void main(String[] args) {
-            try {
-                throwException();
-            } catch (MyException e) {
-                e.printStackTrace();
-                //Do sth...
-                //throw e;
-            }
+    ``` java    
+    public static void main(String[] args) {
+        try {
+            throwException();
+        } catch (MyException e) {
+            e.printStackTrace();
+            //Do sth...
+            //throw e;
         }
-        ```
+    }
+    ```
 
     `try`可能会抛出异常的语句块，`catch (MyException e)`捕获异常MyException声明为引用e.一般来说都会跟上一个`e.printStackTrace()`，打印错误详情，方便debug。    
     当然你也可以再次将异常抛出，交给上层继续处理。    
     有人会发现，`e.printStackTrace()`输出的怎么是红的，因为你看看它的源码：    
 
-        ``` java    
-        public void printStackTrace() {
-            printStackTrace(System.err);
-        }
-        ```
+    ``` java    
+    public void printStackTrace() {
+        printStackTrace(System.err);
+    }
+    ```
 
     它默认用的输出流是`System.err`，而不是sout用的`System.out`哦。
 
@@ -101,16 +101,16 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
     用于将不同类型的异常分开处理。    
 
-        ``` java    
-        try {
-            throwException();
-            throw new NullPointerException();
-        } catch (MyException e) {
-            e.printStackTrace();
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        ```
+    ``` java    
+    try {
+        throwException();
+        throw new NullPointerException();
+    } catch (MyException e) {
+        e.printStackTrace();
+    } catch (NullPointerException e) {
+        e.printStackTrace();
+    }
+    ```
 
 > 对了，如果程序因异常而退出，它的返回值就不为0，在IDEA中可以明显看到：`Process finished with exit code xxx`
 
