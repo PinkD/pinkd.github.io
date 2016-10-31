@@ -74,6 +74,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     使用`try catch`语句。用法：    
 
     ``` java    
+    
     public static void main(String[] args) {
         try {
             throwException();
@@ -90,6 +91,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     有人会发现，`e.printStackTrace()`输出的怎么是红的，因为你看看它的源码：    
 
     ``` java    
+
     public void printStackTrace() {
         printStackTrace(System.err);
     }
@@ -102,6 +104,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
     用于将不同类型的异常分开处理。    
 
     ``` java    
+
     try {
         throwException();
         throw new NullPointerException();
