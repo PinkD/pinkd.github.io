@@ -65,6 +65,7 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 
 #### 0x02 如何抛出异常和进行异常处理
 
+
 - 抛出异常
 
     很简单，直接使用`throw`关键字，但是如果抛出的异常未在当前方法处理，需要在方法后面声明。需要在它所在的方法处声明`throws MyException`。意思是此方法将抛出错误。
@@ -72,16 +73,18 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 - 处理异常
 
     使用`try catch`语句。用法：    
- 
-        public static void main(String[] args) {
-            try {
-                throwException();
-            } catch (MyException e) {
-                e.printStackTrace();
-                //Do sth...
-                //throw e;
-            }
+
+    ``` java    
+    public static void main(String[] args) {
+        try {
+            throwException();
+        } catch (MyException e) {
+            e.printStackTrace();
+            //Do sth...
+            //throw e;
         }
+    }
+    ```
 
     `try`可能会抛出异常的语句块，`catch (MyException e)`捕获异常MyException声明为引用e.一般来说都会跟上一个`e.printStackTrace()`，打印错误详情，方便debug。    
     当然你也可以再次将异常抛出，交给上层继续处理。    
@@ -183,3 +186,5 @@ private int take(int index, int last) {//取豆子
 这是异常处理的用法之一，你永远不知道熊孩子们会搞出什么异常炸掉你的程序，所以熊孩子必须抓出来单独死。
 
 异常在Java中使用频率极高，多次使用对异常自然就熟悉了。
+
+这blog的MarkDown解析有毒，觉得蛋疼可以去[我的简书](http://www.jianshu.com/p/b251aba4e412)看。。。
