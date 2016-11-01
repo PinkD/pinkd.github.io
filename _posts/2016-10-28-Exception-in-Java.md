@@ -11,7 +11,7 @@ categories: Java
 
 ## Java中的异常处理机制
 
-### 0x00异常
+### 0x00 异常
 
 异常分为Error和Exception，我们通常说的处理异常，其实是处理Exception。而Error已经不是异常了，而是错误。一般是因为代码错误导致jvm崩溃。
 
@@ -69,6 +69,16 @@ jvm通过栈来将异常一层一层往上抛(与一层一层的函数调用相�
 #### 抛出异常
 
 很简单，直接使用`throw`关键字，但是如果抛出的异常未在当前方法处理，需要在方法后面声明。需要在它所在的方法处声明`throws MyException`。意思是此方法将抛出错误。
+
+**注意：如果是`RuntimeException`或者它的子类的话，可以不附加声明**，例如：
+
+```java
+try {
+    // some code
+} catch (RemoteException e) { 
+    throw new RuntimeException(e);
+}
+```
 
 #### 处理异常
 
