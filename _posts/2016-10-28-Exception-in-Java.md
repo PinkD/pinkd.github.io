@@ -198,3 +198,5 @@ private int take(int index, int last) {//取豆子
 异常在Java中使用频率极高，多次使用对异常自然就熟悉了。
 
 这blog的MarkDown解析有毒，觉得蛋疼可以去[我的简书](http://www.jianshu.com/p/b251aba4e412)看。。。
+
+感谢haruue帮我指出错误
