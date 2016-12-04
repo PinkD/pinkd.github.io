@@ -266,4 +266,6 @@ test@qq.com==>xxxx@qq.com
 ```
 
 ------
-[原文看这里](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000 )
+廖雪峰的[原文看这里](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000 )
+
+## git rebase
