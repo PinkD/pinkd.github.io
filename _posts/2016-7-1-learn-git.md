@@ -4,7 +4,7 @@ title: Git笔记
 description: 从我的简书上面搬运过来的
 tags:
 - Coding
-categories: Other
+categories: Others
 ---
 
 

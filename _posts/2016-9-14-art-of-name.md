@@ -4,7 +4,7 @@ title: 命名的艺术
 description: 从我的简书上面搬运过来的
 tags:
 - Coding
-categories: Other
+categories: Others
 ---
 
 ## 引言
