@@ -2414,7 +2414,7 @@ footer {
 
 .article-content pre code {
     color: #fff;
-    background: #none;
+    background: none;
     text-shadow: none;
     padding: 0
 }
