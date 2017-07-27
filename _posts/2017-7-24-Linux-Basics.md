@@ -1,3 +1,12 @@
+---
+layout: post
+title: Linux 基础知识
+description: 介绍一点Linux基础
+tags:
+- Linux
+categories: Linux
+---
+
 # Linux 基础知识
 
 ## 从文件说起
