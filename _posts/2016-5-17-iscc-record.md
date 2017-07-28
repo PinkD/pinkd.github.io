@@ -3,7 +3,8 @@ layout: post
 title: 记录一次ISCC逆向
 description: 从我的简书上面搬运过来的
 tags:
-- 信安
+- Reverse
+- ctf
 categories: ctf
 ---
 
