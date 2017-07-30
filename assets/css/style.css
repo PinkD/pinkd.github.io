@@ -1047,7 +1047,7 @@ article .article-content h1, article .article-content h2, article .article-conte
 }
 
 article .article-content h1 > code, article .article-content h2 > code, article .article-content h3 > code, article .article-content h4 > code, article .article-content h5 > code, article .article-content h6 > code {
-    color: #ffffff
+    color: #d44
 }
 
 article .article-content hr {
@@ -1116,7 +1116,7 @@ article .article-content dl dt {
 article .article-content ul li > code, article .article-content ol li > code, article .article-content p code, article .article-content strong code, article .article-content em code, article .article-content table th > code, article .article-content table td > code {
     font-family: Monaco, Menlo, Consolas, Courier New, monospace;
     background: #eee;
-    color: #d14;
+    color: #919;
     border: 1px solid #d6d6d6;
     padding: 0 5px;
     margin: 0 2px;
@@ -2376,7 +2376,7 @@ footer {
 }
 
 .article-content pre, .article-content .highlight, .article-content .highlight pre {
-    background: #2d2d2d;
+    background: #333;
     margin: .5em 0;
     padding: .5em 2%;
     color: #ccc;
@@ -2413,7 +2413,7 @@ footer {
 }
 
 .article-content pre code {
-    color: #fff;
+    color: #6cf;
     background: none;
     text-shadow: none;
     padding: 0
