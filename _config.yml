@@ -6,7 +6,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: rouge
 
 assets: /assets
-baseurl: http://blog.pinkd.online
+baseurl: http://blog.pinkd.moe
 
 # pagination
 paginate: 20
