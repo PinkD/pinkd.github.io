@@ -13,8 +13,9 @@ categories: Linux
 
 在Linux当中，**万物皆文件**。
 
-- 文件（包括可执行文、媒体文件、一般文件等）
-- 文件夹
+- 文件（包括可执行文件、媒体文件、一般文件等）
+- 链接（后面会讲到）
+- 目录（也就是文件夹）
 - 设备
 
 ### 文件的基本属性
@@ -28,7 +29,7 @@ categories: Linux
 |------|---------|--------|--------|
 |d     |rwx      |rwx     |rwx     |
 
-当然，除了这些属性之外还有一些不常用的属性，详见 #TODO
+当然，除了这些属性之外还有一些不常用的属性
 
 ##### 文件类型
 
@@ -66,7 +67,7 @@ categories: Linux
 
 注： `[]` 为可选参数， `<>` 为必选参数。
 
-### ls
+### `ls`
 
 这应该是Linux中使用次数最多的命令，没有之一。
 
@@ -81,20 +82,20 @@ categories: Linux
 
 啥，你问我查看文件夹怎么办？
 
-### man
+### `man`
 
 - **Read the fucking manual plz.**
 - **有问题问男人**
-- 其实它叫手册，比 `<command> --help` 更加详细。
+- 其实它叫手册，比 `<command> --help` 更加详细，虽然一般 `--help` 就够了。
 - 所以本文中未列出的参数自己查手册或者help吧
 
-### cat
+### `cat`
 
 将文件显示到标准输出流。
 
 用法(Usage)： `cat <file>`  
 
-### mv 
+### `mv`
 
 移动文件。
 
@@ -102,7 +103,7 @@ categories: Linux
 
 ~~所以 `rename` 存在的意义是什么？~~
 
-### cp
+### `cp`
 
 复制文件。
 
@@ -112,9 +113,9 @@ categories: Linux
 
 - `-r` 递归复制，复制文件夹时必须加此参数
 
-### ln
+### `ln`
 
-创建链接。这比 ~~辣鸡~~ Widoge里的快捷方式强大多了。
+创建链接。这比 ~~辣鸡~~ Windoge里的快捷方式强大多了。
 
 用法(Usage)： `ln [options] <target> <link name>`
 
@@ -127,7 +128,7 @@ categories: Linux
 
 软链接和硬链接的区别：软链接相当于Widoge里的快捷方式，储存了目标的位置等信息，不过比快捷方式强大。硬链接是创建了另一个索引节点。只有当所有的索引节点都被删除时，文件才会被标记为失效，可能被写入操作覆盖。
 
-### grep
+### `grep`
 
 一个正则匹配的强大命令。
 
@@ -135,34 +136,34 @@ categories: Linux
 
 常与管道符 `|` 连用。如： `ll | grep test` ，筛选出当前目录下含有test的文件。
 
-有个蛋疼的问题，grep会显示
+和 `ps` 连用有个蛋疼的问题，如下。
 
-### ps
+### `ps`
 
 查看所有进程。
 
 一般 `ps -aux`
 
-和grep连用。 `ps -aux | grep init` 。会发现grep程序也在结果里面，可以用 `grep -v grep` 去掉。
+和grep连用。 `ps -aux | grep init` 。会发现grep程序也在结果里面，可以再套一层 `grep -v grep` 去掉，写脚本可能会用到。
 
-### tar
+### `tar`
 
 打包。
 
 仅打包： `tar -cvf <filename>.tar <files>`    
 打包且压缩： `tar -zcvf <filename>.tar.gz <files>`   
 解压：将上述的c(compress)换成x(exact)。
-其中：v是显示详情，f是覆盖，具体请 `man tar`
+其中：v是显示详情，f是覆盖，具体请 `man`
 
-### tee
+### `tee`
 
 将标准输入复制到每个指定文件，并显示到标准输出。
 
 看个例子： `echo test | tee test1 test2 test3`
 
-以上代码会显示 `test` ，并在
+以上代码会显示 `test` ，并创建三个内容为 `test` 的文件。
 
-### chmod
+### `chmod`
 
 修改文件保护位，在文件部分提到了，分三个部分。用三个8进制数字代替。
 
@@ -173,7 +174,7 @@ categories: Linux
 
 `~/.ssh/` 下的key必须设置成 `600` ，否则会提示无法使用。
 
-### chown
+### `chown`
 
 修改文件所有者。
 
@@ -181,7 +182,7 @@ categories: Linux
 
 一般 `chown pinkd:pinkd <file>` 。可以加 `-r` 递归。
 
-### mount
+### `mount`
 
 挂载设备。使用 `umount` 卸载。
 
@@ -190,21 +191,21 @@ categories: Linux
 挂载一般的磁盘： `mount /dev/sdb1 /mnt`
 挂载iso文件： `mount -t iso9660 /mnt/archlinux.iso /cdrom`
 
-### curl
+### `curl`
 
 神器，需要安装，最常用的就是查看http请求的详情。比如： `curl -v dl.google.com` ，结果就不贴了，太长。详见 `man curl` 。
 
-### nc 
+### `nc `
 
 神器，用来判断某个端口是否打开，还可以传输文件 ~~，甚至可以反弹shell。~~
 
 `nc -vv www.baidu.com 80`
 
-### rm
+### `rm`
 
 删除文件， 目录需要 `-r` ， 有些文件需要 `-f` 。 ~~所以就有了 `rm -rf /` 。~~
 
-### dd
+### `dd`
 
 `Copy a file, converting and formatting according to the operands.`
 
@@ -215,11 +216,11 @@ categories: Linux
 
 其他用法和参数自行 `man` 
 
-### mkfs
+### `mkfs`
 
 格式化。一般 `mkfs.ext4 /dev/sdx#` 。
 
-### alias
+### `alias`
 
 设置alias。比如： `alias ll="ls -lah"`   
 你甚至可以折腾git： `alias gta="git add"
@@ -253,7 +254,7 @@ categories: Linux
 
 ## 包管理
 
-### apt
+### `apt`
 
 debian系下的包管理器。常见用法：
 
@@ -262,7 +263,7 @@ debian系下的包管理器。常见用法：
 - `apt-get upgrade` 更新系统(日常滚)
 - `apt-get install <package name>` 安装指定包
 
-### pacman
+### `pacman`
 
 ArchLinux下的包管理器，不仅仅是包管理器。常见用法：
 
@@ -271,7 +272,7 @@ ArchLinux下的包管理器，不仅仅是包管理器。常见用法：
 - `pacman -Ss <package name>` 查找指定包
 - `pacman -S <package name>` 安装指定包
 
-### yum
+### `yum`
 
 不用CentOS，自己查。[这儿](http://www.runoob.com/linux/linux-yum.html)有个参考。
 
@@ -318,7 +319,9 @@ ArchLinux下的包管理器，不仅仅是包管理器。常见用法：
 
 ### `>>`
 
-`>` 为覆盖文件内容， `>>` 为追加文件内容。符号前可加文件描述符，即 `012` ，其中：0 是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
+`>` 为覆盖文件内容， `>>` 为追加文件内容。
+
+符号前可加文件描述符，即 `012` ，其中：0 是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
 
 所以有这种写法： `<command> 1> stdout.log 2> stderr.log`
 
@@ -335,28 +338,32 @@ ArchLinux下的包管理器，不仅仅是包管理器。常见用法：
 
 ### `&`
 
-此行命令后台运行。例： `ping www.baidu.com &` 。    
+此行命令后台运行，可通过 `jobs` 查看，用 `fg <task num>` 调到前台。例： `ping www.baidu.com &` 。    
 这样的话后台就会一直 `ping` 。
 
 ### `&&`
 
-相当于两个命令一起执行。例： `apt-get update && apt-get upgrade`
+就是你知道的那个 `and` ，相当于两个命令一起执行，但是注意，会短路，也就是如果第一个命令返回值不是0后面就不会执行。例： 
+
+- `apt-get update && apt-get upgrade`
+- `false && echo 喵喵喵`
 
 ### `~`
 
 用户目录。
 
-比如root就是 `/root` ,一般用户(username)就是 `/home/username` 。
+比如root就是 `/root` ,一般用户(username)就是 `/home/username` ，可以修改。
 
 ### `!!`
 
 上一条命令。
 
+`pacman -Syu` ，忘了 `sudo` ，就可以 `sudo !!` 。
+
 ### `!<command>`
 
 带上一次的参数再次执行那个命令执行。
 
-`pacman -Syu` ，忘了 `sudo` ，就可以 `sudo !!` 。
 
 ### `$<num>`
 
@@ -370,11 +377,11 @@ ArchLinux下的包管理器，不仅仅是包管理器。常见用法：
 
 ### 换个shell玩儿
 
-haruue推荐了zsh，快捷配置可以用 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) ，具体github上有安装过程。
+Haruue推荐了zsh，快捷配置可以用 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) ，具体github上有安装过程。
 
 ### lxc
 
-去 [这儿](http://blog.pinkd.online/sre/2016/11/27/ABC-of-lxc) 看看吧，之前写的，可能还有错的地方。
+去 [这儿](http://blog.pinkd.moe/sre/2016/11/27/ABC-of-lxc) 看看吧，之前写的，可能还有错的地方。
 
 ### dcoker
 
