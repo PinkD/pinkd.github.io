@@ -34,7 +34,7 @@ categories: Android
 
 因为在主线程崩溃后，Android的消息机制已经炸了，默认的 `UncaughtExceptionHandler` 就是并关闭程序弹出 ~~令人愉快的~~ `Unfortunately`。可以选择在处理完成后重新启动App。例：
 
-```Java
+```java
 Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread t, Throwable e) {
@@ -61,7 +61,7 @@ Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() 
 
 了解Android消息机制的都知道（不了解的网上搜一搜吧，[这儿](https://android-notes.github.io/2016/12/03/5%E5%88%86%E9%92%9F%E5%AE%8C%E5%85%A8%E7%90%86%E8%A7%A3android-handler/) 也有一篇blog），Android的主线程就执行了几行代码，大概就是：
 
-```Java
+```java
 public static void main(String[] args) {
     Looper.prepare();
     initMessageQueue();
@@ -80,7 +80,7 @@ public static void main(String[] args) {
 
 既然线程发生异常，消息队列被破坏，那我们让消息队列继续运行不就可以实现 `续` 的目的了？所以，可以这样写：
 
-```Java
+```java
 Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread t, Throwable e) {
@@ -98,7 +98,7 @@ Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() 
 
 大概分析一下：
 
-```Java
+```java
 Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread t, Throwable e) {
