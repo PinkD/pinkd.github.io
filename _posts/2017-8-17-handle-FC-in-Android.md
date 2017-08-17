@@ -40,7 +40,7 @@ Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() 
             public void uncaughtException(Thread t, Throwable e) {
                 //LogUtils.save(e);
                 //具体方法网上一大堆，还可以打印机型、系统版本等信息
-                Log.e(TAG, "uncaughtException on " + t.toString() + “: ”, e);
+                Log.e(TAG, "uncaughtException on " + t.toString() + ": ", e);
                 //重启App
                 context.startActivity(new Intent(context, BootActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
                 System.exit(-1);
