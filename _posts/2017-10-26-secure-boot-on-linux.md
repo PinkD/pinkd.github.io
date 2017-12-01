@@ -90,6 +90,10 @@ Depends = sbsigntools
 
 签名操作不能对 `initramfs` 进行签名，因此需要将 `initramfs` 和内核文件 `vmlinuz` 打包在一起一并签名。然而我并没有做这一步，过程可以在 [这儿](https://bentley.link/secureboot/) 找到。这篇文章写得很详细（但是太TMD折腾了，所以搞到上一步就没搞了）。
 
+## 注意事项
+
+配置完 `SecureBoot` 记得给 `BIOS` 加密码，不然人家直接改启动，开了 `SecureBoot` 也白搭。
+
 ## 参考
 
 - [Microsoft对SecureBoot的解释](https://technet.microsoft.com/en-us/library/hh824987.aspx)
