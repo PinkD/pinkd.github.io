@@ -77,6 +77,37 @@ grub-probe --target=hints_string /boot/EFI/Microsoft/Boot/bootmgfw.efi
 
 最后，重启，看看是不是成功了，没成功就找问题和解决问题吧
 
+## DLC
+
+<del>DLC什么鬼，这不是游戏啊魂淡</del>
+
+前面说到了，配置文件内容会被 `grub-mkconfig` 执行，把输出写到 `/boot/grub/grub.cfg` 。所以我后来还是决定写成脚本。然后， `grub` 的输出内容会在启动时从屏幕左上角开始输出（就像命令行）。于是，我有了个大胆的想法：在启动时用字符画一个 `Windoge` 。也可以画一个田字 <del>（田牌操作系统）</del>
+
+配置文件如下：
+
+```bash
+# Win10
+
+EFI_PATH='/EFI/Microsoft/Boot/bootmgfw.efi'
+FULL_PATH='/boot'$EFI_PATH
+UUID=$(grub-probe --target=fs_uuid $FULL_PATH)
+HINTS=$(grub-probe --target=hints_string $FULL_PATH)
+
+echo "menuentry 'Windows 10' {"
+echo "    insmod part_gpt"
+echo "    insmod fat"
+echo "    insmod search_fs_uuid"
+echo "    insmod chain"
+echo "    search --fs-uuid --set=root $HINTS $UUID"
+echo "    cat /grub/txt/test.txt"
+echo "    chainloader $EFI_PATH"
+echo "}"
+```
+
+然后， [test.txt](/raw/test.txt)
+
+就可以在开机时看到 ![](/images/windoge_booting.jpg)
+
 ## 参考
 
 - [ArchLinux Installition](https://wiki.archlinux.org/index.php/Installation_guide)
