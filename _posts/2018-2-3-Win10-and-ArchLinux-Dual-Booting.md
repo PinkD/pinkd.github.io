@@ -27,7 +27,7 @@ categories: Linux
 
 <del>想装双系统的都会装单个系统->会装系统都知道怎么分区->看这篇博客的都知道怎么分区</del>
 
-如果你已经安装了某个系统，并且在分区的时候将整个硬盘都分了（我就是这样），那就需要调整分区大小了。 `Win10` 用系统自带的存储管理中的压缩卷功能就好， `Linux` 的方法看 [如何在Linux中调整分区大小]()
+如果你已经安装了某个系统，并且在分区的时候将整个硬盘都分了（我就是这样），那就需要调整分区大小了。 `Win10` 用系统自带的存储管理中的压缩卷功能就好， `Linux` 的方法看 [如何在Linux中调整分区大小](https://blog.pinkd.moe/linux/2018/01/31/resize-a-ext4-partiton-safely)
 
 ### 装系统
 
@@ -41,7 +41,7 @@ categories: Linux
 
 如果你是开机时直接在 `BIOS` 选启动项的话，可以直接关掉这篇 `blog` 了
 
-然而我做了 [Secure Boot]() ，开了 `BIOS` 锁，每次进 `BIOS` 都需要输密码，很麻烦，干脆加到 `grub` ，统一管理
+然而我做了 [Secure Boot](https://blog.pinkd.moe/linux/2017/10/26/secure-boot-on-linux) ，开了 `BIOS` 锁，每次进 `BIOS` 都需要输密码，很麻烦，干脆加到 `grub` ，统一管理
 
 首先，在 `/etc/grub.d/` 中添加（或修改）一个配置文件，让 `grub-mkconfig` 能将启动项写到 `/boot/grub/grub.cfg` 中。其实直接修改 `40_custom` 就好，自己添加需要注意文件名格式和 `+x`
 
@@ -79,5 +79,7 @@ grub-probe --target=hints_string /boot/EFI/Microsoft/Boot/bootmgfw.efi
 
 ## 参考
 
-[ArchLinux Installition](https://wiki.archlinux.org/index.php/Installation_guide)
+- [ArchLinux Installition](https://wiki.archlinux.org/index.php/Installation_guide)
 - [Windows installed in UEFI-GPT Mode menu entry](https://wiki.archlinux.org/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
+- [如何在Linux中调整分区大小](https://blog.pinkd.moe/linux/2018/01/31/resize-a-ext4-partiton-safely)
+- [Secure Boot](https://blog.pinkd.moe/linux/2017/10/26/secure-boot-on-linux)
