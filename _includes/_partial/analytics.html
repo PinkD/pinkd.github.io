@@ -12,10 +12,13 @@ ga('send', 'pageview');
 {% if site.baidu_tongji.enable %}
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F{{ site.baidu_tongji.sitecode }}' type='text/javascript'%3E%3C/script%3E"));
+document.write(unescape("%3Cscript async src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F{{ site.baidu_tongji.sitecode }}' type='text/javascript'%3E%3C/script%3E"));
 </script>
 {% endif %}
 
 {% if site.cnzz_tongji.enable %}
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz_tongji.siteid }}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz_tongji.siteid }}' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz_tongji.siteid }}'%3E%3C/span%3E%3Cscript async src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz_tongji.siteid }}' type='text/javascript'%3E%3C/script%3E"));
+</script>
 {% endif %}
