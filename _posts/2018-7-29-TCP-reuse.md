@@ -11,13 +11,12 @@ categories: Others
 
 ## socket分配
 
-一个进程向操作系统申请一个 `scoket` ，但是当进程退出后，还未关闭的连接不会立即关闭，会留给操作系统处理。操作系统会尝试关闭这个连接。但是如果关闭时出现问题，这个连接就会一直处于 `TIME_WAIT` 的状态，而这是相应的端口还处于占用状态，如果这个时候再重新启动这个程序，就会出现地址被占用的情况
+一个服务端进程向操作系统申请一个 `scoket` 来监听，但是当进程退出后，还未关闭的连接不会立即消失，而是会留给操作系统处理。操作系统会尝试关闭这个连接。但是如果关闭时出现问题，这个连接就会一直处于 `TIME_WAIT` 或其他非正常状态，而这是相应的端口还处于占用状态，如果这个时候再重新启动这个服务端程序，就会出现地址被占用的情况
 
 
 ## 例子
 
 测试代码：
-
 
 ```python
 import socket
@@ -55,7 +54,7 @@ OSError: [Errno 98] Address already in use
 
 使用 `setsockopt` ：
 
-```
+```python
 import socket
 
 s = socket.socket()
@@ -93,4 +92,13 @@ int client = accept(socket, (struct sockaddr *) in_addr, &len);
 
 ## 其他
 
-发现除了 `SO_REUSEADDR` 之外还有一个 `SO_REUSEPORT` 的选项，查询后得知是 `BSD` 独有的， `Linux` 并不能用
+- 发现除了 `SO_REUSEADDR` 之外还有一个 `SO_REUSEPORT` 的选项，查询后得知是 `BSD` 独有的， `Linux` 并不能用
+- 如果是客户端绑定端口用这个属性可能会出现刚连接上服务器就莫名其妙收到一个 `FIN` 的问题，导致其立即关闭，因此客户端使用此选项时需注意
+
+
+## 参考链接
+
+- [小议socket关闭](https://blog.csdn.net/yunnysunny/article/details/18994927)
+- [PortProtection](https://github.com/PinkD/PortProtection/commit/0984e14ba94efcf05f247fac1d84b082f6ab573e#diff-daa93526fbf4e9b2dbeb9bb9c72f0852R54)
+
+接下来应该还有一篇关于 `TCP` 连接关闭的文章（咕咕咕
