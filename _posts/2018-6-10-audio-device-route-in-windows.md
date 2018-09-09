@@ -28,7 +28,7 @@ categories: Others
 
 - 1.修改默认输入设备为软件提供的虚拟声卡（ `Voice Meeter` 的话只有一个，其实是软件的虚拟输出）
 
-    ![](/images/default_record_device.jpg)
+    ![默认录音设备](/images/default_record_device.jpg)
 
 - 2.配置 `Voice Meeter`
 
@@ -49,11 +49,11 @@ categories: Others
 
 - 2.修改默认输出设备为软件提供的虚拟声卡（软件的输入，注意不要与第3步中虚拟设备相同）
 
-    ![](/images/default_play_device.jpg)
+    ![默认播放设备](/images/default_play_device.jpg)
 
 - 3.配置 `Voice Meeter Banana`
     
-    ![](/images/config_voice_meeter.jpg)
+    ![配置](/images/config_voice_meeter.jpg)
   - 如图
   - 将 `HARDWARE INPUT 1` 设为麦克风，将其输出的 `B1` 选中（输出到虚拟设备1）
   - 将 `VIRTUAL INPUT 1` 输出的 `A1` `B1` 均选中（同时输出到虚拟和实体设备1）
@@ -68,7 +68,7 @@ categories: Others
 
 ## 效果
 
-![](/images/test_record_with_au.jpg)
+![测试录音](/images/test_record_with_au.jpg)
 
 后面那几下就是我拍了几下麦的录进去的声音，前面是 `foobar` 播放的音乐
 

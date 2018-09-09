@@ -71,19 +71,19 @@ openvpn --config server.ovpn
 
 如果没有服务启用，先启用
 
-![~](/images/win2008OpenVPN1.jpg)
+![启用服务](/images/win2008OpenVPN1.jpg)
 
 选择 `NAT` ，如果没有接口就添加，添加的对象为你的外网接口（本地连接）和OpenVPN的接口（本地连接 2）
 
-![~](/images/win2008OpenVPN2.jpg)
+![查看路由](/images/win2008OpenVPN2.jpg)
 
 配置外网接口为公共接口，配置OpenVPN的接口为专用接口
 
-![~](/images/win2008OpenVPN3.jpg)
+![配置接口](/images/win2008OpenVPN3.jpg)
 
 接口名可以在网络连接中查找（TAP）那个即为OpenVPN的接口
 
-![~](/images/win2008OpenVPN4.jpg)
+![查看接口](/images/win2008OpenVPN4.jpg)
 
 
 然后再在客户端试试，应该就能连网了
