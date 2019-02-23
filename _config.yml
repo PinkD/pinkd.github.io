@@ -72,7 +72,7 @@ mathjax: false      #enable mathjax if true
 #### Author information
 author:
   name: PinkD      ## e.g. wuchong Author name
-  intro_line1:  "これわすべてはシュタインズゲートの选択だ！"    ## your introduction on the bottom of the page
+  intro_line1:  "小さいな自分と大きな世界"    ## your introduction on the bottom of the page
   intro_line2:  "EL PSY CONGROO!"  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
