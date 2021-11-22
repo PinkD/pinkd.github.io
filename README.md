@@ -1,8 +1,8 @@
 # PinkD の Blog
 
 ## Site:
-- [78848d676612.github.io](78848d676612.github.io) 
-- [blog.pinkd.online](blog.pinkd.online)
+- [pinkd.github.io](https://pinkd.github.io) 
+- [blog.pinkd.moe](https://blog.pinkd.moe)
 
 ## About
 
