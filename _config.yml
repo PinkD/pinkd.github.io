@@ -18,7 +18,7 @@ kramdown:
     
 
 title : PinkD の Blog
-tagline: Steins;Gate
+tagline: 
 
 defaults:
   -
@@ -56,9 +56,9 @@ rss: /atom.xml ## RSS address.
 imglogo:
   enable: true             ## display image logo true/false.
   src: img/logo.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
-favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
-apple_icon: img/apple.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
-author_img: img/author.jpg ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
+favicon: img/favicon.png   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
+apple_icon: img/apple.png ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
+author_img: img/author.png ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
 banner_img: #img/banner.jpg ## size:1920px*200px+. Banner Picture
 
 #### index post is expanding or not 
@@ -72,8 +72,8 @@ mathjax: false      #enable mathjax if true
 #### Author information
 author:
   name: PinkD      ## e.g. wuchong Author name
-  intro_line1:  "小さいな自分と大きな世界"    ## your introduction on the bottom of the page
-  intro_line2:  "EL PSY CONGROO!"  ## the 2nd line
+  intro_line1:  ""    ## your introduction on the bottom of the page
+  intro_line2:  ""  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
@@ -99,17 +99,7 @@ toc:
 links:
   #码农圈: https://coderq.com
   #Jark's Blog: http://wuchong.me
-  简书: http://www.jianshu.com/users/28e6956f7fbb
-  朱大的简书: http://www.jianshu.com/users/d73c34b951ef
-  红岩网校: http://hongyan.cqupt.edu.cn/
-  Haruue: https://haruue.moe/
-  Citron: http://blog.citron.cat/
-  Stawidy: http://blog.stawidy.pw/
-  Jay Li: http://blog.jay-li.cn/
-  #49: https://49.gs/
-  #RicterZ: https://ricterz.me/
-
-
+  haruue: https://haruue.moe/
 
 #### Comment
 duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
