@@ -149,3 +149,14 @@ baidu_search:     ## http://zn.baidu.com/
 tinysou_search:     ## http://tinysou.com/
   enable: false
   id:  ## e.g. "4ac092ad8d749fdc6293" for your tiny search id
+
+#### ArkPets Web Desktop Pet
+arkpets:
+  enable: true
+  character:
+    id: "plosis"
+    name: "白面鸮"
+    skeleton: "128_plosis_yun#4/build_char_128_plosis_yun#4.skel"
+    atlas: "128_plosis_yun#4/build_char_128_plosis_yun#4.atlas"
+    texture: "128_plosis_yun#4/build_char_128_plosis_yun#4.png"
+  models_path: "assets/ark-pet/models/"

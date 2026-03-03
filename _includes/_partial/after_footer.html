@@ -256,6 +256,42 @@ $(document).ready(function(){
 {% include _partial/mathjax.html %}
 <!-- MathJax End -->
 
+<!-- ArkPets Web Desktop Pet Begin -->
+{% if site.arkpets.enable %}
+<div id="arkpets-container"></div>
+<script src="{{ site.assets }}/js/arkpets.js"></script>
+<script type="text/javascript">
+(function() {
+    var MODEL_PATH = "{{ site.arkpets.models_path }}";
+    var characterModel = {
+        id: "{{ site.arkpets.character.id }}",
+        name: "{{ site.arkpets.character.name }}",
+        skeleton: "{{ site.arkpets.character.skeleton }}",
+        atlas: "{{ site.arkpets.character.atlas }}",
+        texture: "{{ site.arkpets.character.texture }}",
+        resourcePath: MODEL_PATH
+    };
+
+    window.addEventListener('load', function() {
+        try {
+            var character = new arkpets.Character(
+                "arkpets-container",
+                function(e) {
+                    arkpets.showContextMenu(e, character, {
+                        getCharacterModels: function() { return [characterModel]; }
+                    });
+                },
+                characterModel
+            );
+        } catch (err) {
+            console.warn("ArkPets init failed:", err);
+        }
+    });
+})();
+</script>
+{% endif %}
+<!-- ArkPets Web Desktop Pet End -->
+
 <!-- Tiny_search Begin -->
 {% include _partial/tinysou_search.html %}
 <!-- Tiny_search End -->
